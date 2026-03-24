@@ -1,0 +1,31 @@
+we talked about the meta tag viewport which is the first basis of responsiveness 
+we looked into relative units of measurements{
+we use %,em/rem,vw/vh instead of px >>makes our elements more flexible 
+
+}
+using flex box and grid layout to create responsive designs{
+flex box>>this is a layout model that allows you to create flexible and responsive layouts by
+ defining a container and its child elements. It provides a simple and efficient way to align and distribute
+  space
+WE USE flex wrap to contain overflowwing content and make them responsive 
+grid layout>>this is a layout model that allows you to create complex and responsive grid-based 
+layouts by defining rows and columns. It provides a powerful way to control the placement and alignment
+ of elements within a grid container: .;
+using media queries >>this allows us to define various break points of styles in css 
+{
+    this means that we can have more than pne css code block that is responsive with various 
+    device width {
+        if we have css for width 300 px and below ,then 300 -760px and 760 -1080 px .....)
+
+    }
+}
+to account for larger screen we use the max-width to prevent overflowing of content 
+and for smaller screen we use min-width to prevent content from being too small and unreadable
+we can set this using px (1500px)
+
+mobile first approach>>this design makes sure that we prioritize mobile designs and later 
+scale to desktop designs. This approach is based on the idea that mobile devices have more constraints
+ than desktop devices,
+ such as smaller screens and slower internet connections.
+  By designing for mobile first, we can ensure that our website is optimized for the most common 
+  use case and then add additional features and styles for larger screens as needed.

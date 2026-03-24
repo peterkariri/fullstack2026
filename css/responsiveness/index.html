@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header{
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        h1{
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        nav ul{
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding:10px;
+        }
+        nav a{
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        nav a:hover{
+            color: #ff6347;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .container{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content:center ;
+            gap: 27px;
+            margin: 5em;
+
+        }
+        .card{
+            background-color: bisque;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.2);
+        }
+        footer{
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        @media (max-width:360px){
+            body{
+                background-color: blue;
+            }
+            header{
+                background-color: #b1acac;
+                color: rgb(35, 34, 34);
+                padding: 20px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>my responsive website</h1>
+
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+   <section class="container">
+      <div class="card">
+        <h2>card-1</h2>
+        <p>this is a responsive card-1</p>
+      </div>
+
+      <div class="card">
+        <h2>card-2</h2>
+        <p>this is a responsive card-2</p>
+      </div>
+
+        <div class="card">
+            <h2>card-3</h2>
+            <p>this is a responsive card-3</p>
+        </div>
+   </section>
+
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 My Responsive Website. All rights reserved.</p>
+    </footer>
+</body>
+</html>

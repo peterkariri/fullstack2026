@@ -1,0 +1,55 @@
+animation>>this refers to high moving objects/images(content) which are defined by 
+keyframes and animation properties
+frame>>this in a animation is a single point in the animation sequence, defined 
+by a percentage or a keyword (from, to) and contains the styles that should be applied 
+at that point in the animation.
+keyframe >>these uses rules to define the styles ,transitions and transformations that 
+are going to apply to your elements 
+transitions>>these are used to create smooth animations between two states of an element, 
+such as when it changes from one color to another or when it moves from one position to another.
+Transitions are defined using the transition property in CSS, which specifies the duration, timing function,
+ and properties that should be transitioned.
+ transition{
+    ease-in-out>>this is a timing function that creates a smooth transition by accelerating
+     at the beginning and decelerating at the end of the animation.
+    linear>>this is a timing function that creates a constant speed transition, without any
+     acceleration or deceleration.
+    ease-in>>this is a timing function that creates a transition that starts slowly and accelerates
+     towards the end of the animation.
+    ease-out>>this is a timing function that creates a transition that starts quickly
+     and 
+    decelerates towards the end of the animation.
+ }
+ we use percentages or keyword which are from and to to define the keyframe for the
+  animation 
+ we defune the animation keyframe using the @keyframe rule
+ when using from...to we are restricted to only two keyframes but 
+ when using percentages we can define as many keyframes as we want(0% to 100%)
+
+ @keyframes example{
+    from{
+        background-color: red;
+        //other rules to initiate the element
+    }
+    to{
+        background-color: blue;
+        //other rules to end the element
+    }
+ }
+ one keyframe can be linked to many elements using the animation property in the 
+ css body of the ::file-selector-button
+ how do you link a keyframe to an element 
+ the name of the animation is the name of the keyframe(safety)
+ in the animation property we specify the name of the keyframe,duration of the 
+ animation ,
+ the timing function and the number of times the animation should run 
+
+ .parent{
+    background-color: red;
+    animation:example 2s ease-in-out infinite;
+ }
+
+ on 25th{
+    build a beating heart with a duration of 5 seconds 
+    build a news ribbon at the bottom with words of your choosing and a background color of your choosing 
+ }

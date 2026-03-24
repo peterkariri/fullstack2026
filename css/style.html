@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: justify;
+        }
+         .paragraph{
+            background-color: magenta;
+            color: red;
+            padding: 30px;
+         }
+         h1{
+            background-color: black;
+            color:green !important;
+         }
+         .text{
+            background-color: cyan;
+         }
+            .spanny{
+                color: rgb(0, 255, 17);
+            }
+
+            #heading{
+                background-color: yellow;
+                color: blue;
+            }
+
+           input[type=text]{
+            border: 1px solid orange;
+            color:red;
+           }
+           .image{
+            width: 10%;
+           }
+           .image img{ /* //descendant selector used to select any descendant of the parent tag tht is specified  */
+            width:100vw;
+            height: 100vh;
+
+         
+
+           }
+
+           .form{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            
+           }
+
+    </style>
+</head>
+<body>
+    
+    <h1  style="color:red;font-size:30px;">Hello World</h1>
+    <p class="paragraph text spanny">This is a paragraph in the HTML document.I am going to use CSS to style it.</p>
+    <div class="divvy">hello i am divvy </div>
+    <h4  class="heading" id="heading">Another heading</h4>
+
+    <form action="" class="form">
+        <label for="fname">First Name</label>
+        <input type="text" name="firstname" id="fname" placeholder="john" max="20" min="3" required>
+<br>
+        <label for="sname">Second Name</label>
+        <input type="text" name="secondname" id="sname" placeholder="doe" max="20" min="3" required>
+<br>
+        <label for="phone">Phone Number</label>
+        <input type="text" name="phonenumber" id="phone" placeholder="0712345678" value="+254" required>
+        <br>
+
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" placeholder="john@doe.com">
+    </form>
+  
+  <div class="image">
+    <img src="/finaldraft.png" alt="">
+  </div>
+</body>
+</html>

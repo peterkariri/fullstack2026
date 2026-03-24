@@ -1,0 +1,176 @@
+<!-- ..forms are a data collection tool used to collect user data 
+it has two methods {
+    post: used to send data securely to the server
+    get: used to send data via URL parameters
+}
+examples of forms are {
+    contact forms
+    registration forms
+    feedback forms
+}
+what makes up forms{
+    input fields: they are used to declare what type of data a user is supposed to enter
+    labels: descriptive text for input fields(firstname)
+    action attribute: URL where the form data is sent(local host or external server)
+    method attribute: specifies the HTTP method (GET or POST)
+    button>>send button: submits the form data to the server
+    id>>unique identifier for form elements and the name of the id should be the name of the label 
+    form>>this is the container that holds all form elements
+}
+
+<form action="https://localhost" method="post">
+
+</form>
+
+ input types{
+    text: used for single line text input (name,city)
+    password: used for password input, masks the characters(dots or asterisks)
+    email: used for email address input, validates email format(things like @ and .com)
+    number: used for numeric input, allows only numbers
+    date: used for date input, provides a date picker(calendar)
+    checkbox: used for multiple selections from a set of options
+    radio: used for single selection from a set of options
+    submit: button that submits the form data to the server 
+ }    
+
+ sign up form example:
+  -->
+
+ <form action="">
+
+
+
+                <div>
+                <label for="fname">First Name:</label>
+               <input type="text" name="firstName" id="fname" placeholder="john" max="20" min="3" required>
+                </div>
+        
+
+          <div>
+           <label for="sname">Second Name:</label>
+            <input type="text" name="secondName" id="sname" placeholder="doe" max="20" min="3" required>
+          </div>
+            
+        <div>
+        <label for="phone">phone number:</label>
+            <input type="text" name="phoneNumber" id="phone" placeholder="0712345678" value="+254" required>
+        </div>
+            
+
+        <div>
+        <label for="email">Email:</label>
+            <input type="email" name="email" id="email" placeholder="johndoe@gmail.com" required>
+        </div>
+        
+        <div>
+        <label for="password">Password:</label>
+            <input type="password" name="password" id="password"  max="20" min="10" required>
+        </div>
+
+        
+        <div>
+        <label for="cpassword">Confirm Password:</label>
+            <input type="password" name="confirmPassword" id="cpassword" max="20" min="10" required>
+        </div>
+
+        <div>
+            <button type="submit">Sign Up</button>
+
+        </div>
+            
+        <div>
+            <button type="reset">Reset</button>
+
+        </div>
+
+        <!-- //datalist
+          used to give sugggestions to users while typing in input fields works hand in hand witht the input 
+          we define it by using input list attribute(the identifier) and datalist tag(the attribute identifier which is the same as the input list attribute)
+          we use the option tag to define the options inside the datalist tag -->
+          <input list="counties" name="county" placeholder="choose your county">
+          <datalist id="counties">
+            <option value="Nairobi"></option>
+            <option value="Mombasa"></option>
+            <option value="Kisumu"></option>
+            <option value="Uasin Gishu"></option>
+            <option value="Machakos"></option>
+            <option value="Nakuru"></option>
+            <option value="kiambu"></option>
+          </datalist>
+
+       <!--  //fieldset
+         used to group related form elements together visually and semantically
+         we can include a legend tag to provide a caption for the fieldset
+         -->
+         <fieldset>
+            <legend>Personal Information:</legend>
+            <div>
+                <label for="age">Age:</label>
+                <input type="number" name="age" id="age" min="0" max="120">
+            </div>
+            <div>
+                <label for="dob">Date of Birth:</label>
+                <input type="date" name="dob" id="dob">
+            </div>
+
+         </fieldset>
+        //textarea>>it is an enclosed tag used to create a multi line text input area
+
+        <textarea name="bio" id="bio" placeholder="Enter your biography here... " cols="100" rows="20"></textarea>
+        //radio 
+        itis a tag that allows only a single selction from a set of options(gender ,payment method)
+        the name attribute should be the same for all radio buttons in a group to ensure only one can be selected at a time
+         <div>
+
+            <label for="mpesa">Mpesa:</label>
+            <input type="radio" name="paymentMethod" id="mpesa" value="mpesa">
+
+            <br>
+            <label for="cash">Cash:</label>
+            <input type="radio" name="paymentMethod" id="cash" value="cash">
+            <br>
+            <label for="pesapal">Pesalpal:</label>
+            <input type="radio" name="paymentMethod" id="pesapal" value="pesapal">
+         </div>
+        //checkbox 
+        with a checkbox users can select multiple options from a set of choices(interests ,hobbies)
+        each checkbox should have a unique name attribute to identify the selected options
+        <div>
+            <h1> select your hobbies :</h1>
+
+            <label for="reading">Reading:</label>
+            <input type="checkbox" name="hobbyReading" id="reading">
+            <br>
+            <label for="traveling">Traveling:</label>
+            <input type="checkbox" name="hobbyTraveling" id="traveling">
+            <br>
+            <label for="cooking">Cooking:</label>
+            <input type="checkbox" name="hobbyCooking" id="cooking">
+            <br>    
+            <label for="sports">Sports:</label>
+            <input type="checkbox" name="hobbySports" id="sports">      
+              <br>
+
+              <label for="hiking">Hiking:</label>
+              <input type="checkbox" name="hobbyHiking" id="hiking">
+        </div>
+        <!-- //selection 
+        this tag allows us to select only one option from a dropdown list
+        it uses the option value tag to define the available  static choices -->
+        <div>
+            <label for="country">selct your country</label>
+            <select name="country" id="country">
+                <option value="Kenya">Kenya</option>
+                <option value="Uganda">Uganda</option>
+                <option value="Tanzania">Tanzania</option>
+                <option value="Djibouti">Djibouti</option>
+            </select>
+        </div>
+
+
+
+
+
+
+ </form>
+ 

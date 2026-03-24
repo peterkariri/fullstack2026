@@ -1,0 +1,215 @@
+css refers to cascanding style sheet > it is used to style the html page and make it look good
+css can be ebedeed in a html document in three ways {
+1. inline css>>it is used to style a specific element in the html page(specificity)
+2. internal css (this one we use the style tags to embedd css in a html document)>>semantically put n the head section of the html document
+3. external css (this one we use the link tag to link an external css file to the html document) >> this is the most common way to use css
+ and it is recommended to use this method as it keeps the html document clean and separates the content from the presentation
+}
+best practise would be to use external css as it keeps the html document clean and separates the content from the presentation
+
+how do we define css block  {
+    selector>>this is the main part that links a css block to a html element or a group of html elements
+    property>>this is the attribute that we want to style (for example: color, font-size, background-color, etc)
+    value>>this is the value that we want to assign to the property (for example: red, 16px, #000000, etc)
+while defining thia the property and value are separated by a colon (:) and the property-value pairs are separated by a semicolon (;)
+}
+
+parent{
+    font-size: 20px;
+    color:red;
+
+}
+rules of defining css{
+    cascanding>>if there are multiple css rules that apply to the same element, the rule that is defined last will take precedence (this is called cascading)
+    specificity>>if there are multiple css rules that apply to the same element, the rule with higher specificity will take precedence (specificity
+     is calculated based on the type of selector used, for example
+
+}
+
+selectors in css{
+    element/tag selector >>this one is used to select a tag and all tags that have the same tag name to be stye {
+        this is not advised because you style every tag in `the html document and it can cause unintended consequences
+        p{
+            color:red;
+        }
+        h3{
+            font-size: 30px;
+        }
+    }
+
+    class selector>>it uses the dot notation to style selected components{
+        this components are created by using the dot notation in html or by defining the class attribbute in the html element and assigning it a class name
+        .class-name{
+            color:blue;
+        }
+        one can assign multiple classes to a html element by separating the class names with a space in the class attribute of the html element
+    }
+    id selector>>it uses the hash notation to style a specific element in the html document {
+        this is has a very high specificity and it can cause unintended consequences
+        #id-name{
+            color:green;
+        }
+    }
+    attribute selector>>it is used to select elements based on their attributes and attribute values {
+        this is a very powerful selector as it allows you to select elements based on their attributes and attribute values
+        syntax ..THE SQUARE BRACKETS ARE USED TO DEFINE THE ATTRIBUTE SELECTOR
+        input[attribute=value]{
+            color:yellow;
+        }
+        input[type=text]{
+            color: lightgray;
+        }
+    }
+    
+}
+//propeties of css {
+    text properties >>these are properties used to style texts .examples include{
+        color>which gives color to the text 
+        font-size>gives the font size to the text()
+        font-family>gives the font family to the text(san serif, serif, monospace, etc)
+        font-weight: this one is used to make the text bold or normal (bold, normal, etc);
+        text alignment{
+            this are text properties that are used to align the text in the html document{
+                right>>this one is used to align the text to the right
+                left>>this one is used to align the text to the left
+                center>>this one is used to align the text to the center
+                justify>>this one is used to align the text to both the left and right margins,
+                they are defined in the text-align property and they are used to align the text in the html document
+            }
+
+             color>>this one is used to give color to the text in the html document{
+                color can be defined using three ways (hex,rgb, and color names)
+                all this give you 256 colors to choose from(by rgb it will be upto 255 and by hex it will be upto ff)
+                color:red;//color names
+                color:#ff0000;..hex
+                color:rgb(255,0,0);//rgb
+                hsl(hue, saturation, lightness) >> this is another way to define color in css {
+                    hue>>this is the color itself and it is defined in degrees (0-360)
+                    saturation>>this is the intensity of the color and it is defined in percentage (0-100%)
+                    lightness>>this is the brightness of the color and it is defined in percentage (0-100%)
+                    color:hsl(0, 100%, 50%); // this will give you red color
+                }
+                for grb and hsl we add another key component called opacity{
+                    this is used to define the transparency of the color and it is defined in percentage (0-100%) or decimal (0-1)
+                    color:rgba(255,0,0,0.5); // this will give you red color with 50% opacity
+                    color:hsla(0, 100%, 50%, 0.5); // this will give you red color with 50% opacity
+             }
+
+             measurements{
+                this are used to give measurments and size definitions to the html elements{
+                    px>>pixels (absolute unit)most commonly used 
+                    em>>relative to the font-size of the parent element(the parent element is 16px by default in most browsers(1em=16px))
+                    rem>>relative to the font-size of the root element(html element)(1rem=16px by default in most browsers)
+                    %>>relative to the parent element(defining relative measurements and responsive design)
+                    vw>>viewport width (1vw = 1% of the viewport width)
+                    vh>>viewport height (1vh = 1% of the viewport height)
+             }
+
+        }
+           background>>tthis is used to give  background properties to any element in html .This properties include the following{
+            background-color: gives the color of the desired element's background
+            background-image: gives the image of the desired element's background(this image is embedded using a url with the path set to 
+            the image location (online or local);
+                background-size: this is used to define the size of the background image (cover(the background covers the viewport),
+                 contain(witin the length of the element),)
+                background-position: this is used to define the position of the background image (center, top, bottom, left, right, etc)
+                background-repeat: this is used to define whether the background image should repeat or not (repeat, no-repeat, etc)
+           }
+           the box model>>margin,border,padding,content
+           positions(sticky,static,fixed,absolute relative)
+           displays(flex,grid,block,inline, etc)
+
+
+    }
+    possitions >>these are properties used to position elements in the html document. These properties include {
+    static>>this is the default position of all elements in the html document. The elements are positioned according 
+    to the normal flow of the document and they are not affected by the top, bottom, left, and right properties 
+    (a newsletter website)
+
+    relative>>this is used to position an element relative to its normal position. 
+    The element is positioned according to the normal flow of the document and it can be moved using 
+    the top, bottom, left, and right properties
+   
+    absolute>>this is used to position an element relative to its nearest positioned ancestor
+     (the nearest ancestor that has a position other(relative) ). If there is no positioned ancestor, 
+     the element is positioned relative to the initial containing block (the html element    in most cases).
+      The element is removed from the normal flow of the document and it can be moved using the top, bottom, left,
+       and right properties
+    
+    fixed>>this is used to position an element relative to the viewport. 
+    The element is removed from the normal flow of the document and it can be moved using the top, bottom, left,
+
+    to define this directions we use four properties {
+        top >>this one pushs the element down from the top of the viewport
+        :left>>this one pushs the element to the right from the left of the viewport
+        right >>this one pushs the element to the left from the right of the viewport
+        bottom >>this one pushs the element up from the bottom of the viewport
+    }
+
+
+    the box model {
+        everything in html is a box  and its made up of four components {
+            content: this is the innermost part of the box and it contains
+             the actual content of the element (text, images, etc);
+
+             padding>this is the space between the content and the border of the elemetn{
+                padding-left:leaves a space on the left of the content and it pushes the border to the left
+                 padding-bottom: leaves a space on the bottom of the content and it pushes the border down
+                 padding-top: leaves a space on the top of the content and it pushes the border up
+                 padding-right: leaves a space on the right of the content and it pushes the border to the right
+                 padding: this is a shorthand property that can be used to define all four padding;
+
+              
+             }
+
+             border>imaginary line that surrounds the padding and content of the element 
+             and it can be styled using the border property 
+
+             margin>this is the space between the border of one element to another element 
+                margin-left: leaves a space on the left of the border and it pushes the element to the right
+                margin-bottom: leaves a space on the bottom of the border and it pushes the element up
+                margin-top: leaves a space on the top of the border and it pushes the element down
+                margin-right: leaves a space on the right of the border and it pushes the element to the left
+                margin: this is a shorthand property that can be used to define all four margins;
+
+                margin:20px;
+
+
+                displays>>this is used to define how elements are arranged in the website 
+                {
+                    display: block >>this is used to define elements that are displayed as blocks by default(block level elements )
+                    {this means that only one element per line and the element takes the full width of its parent container
+                        examples include div, p, h1, h2, h3, etc)
+                    }
+                    display inline>>this is used to define elements that are displayed as inline by default (inline level elements)
+                    {this means that multiple elements can be on the same line and the element takes only the width of its content
+                        examples include span, a, img,b,i ,strong etc)
+
+                        display flex>>this is used to stye components in an inline manner by default 
+                        but it can change to take other displays types such as block (by using flex-direction: column) 
+                        and it is used to create flexible and responsive layouts
+                        and change it to an inline with display inline-flex
+
+                        you can be able to reverse the direction using the flex-direction property and it has four values {
+                            row>>this is the default value and it arranges the flex items in a row (horizontally)
+                            column>>this arranges the flex items in a column (vertically)
+                            row-reverse>>this arranges the flex items in a row but in reverse order
+                            column-reverse>>this arranges the flex items in a column but in reverse order
+                        }
+
+                        gap>>this is used to define the space between flex items and it can be defined
+                         in any measurement unit (px, em, rem, %, etc)
+
+                         flex wrap>>this is used to define whether the flex items should wrap 
+                         or not when they exceed the width of the container {
+                            nowrap>>this is the default value and it does not allow the flex items to wrap and they will overflow the container
+                            wrap>>this allows the flex items to wrap and they will move to the next line when they exceed the width of the container
+                            wrap-reverse>>this allows the flex items to wrap but in reverse order and they will move to the next line 
+                            when they exceed the width of the container
+                         }
+                       
+                }
+
+        }
+    }
+}
