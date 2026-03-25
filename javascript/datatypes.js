@@ -130,4 +130,32 @@ let properties=`My name is ${person.name} and i am ${person.age}
  and my postal code is ${person.address.postalCode}`;
 
  console.log(properties);
- 
+
+ /* arrays>>these are data types that are used to store multiple values in square brackets 
+ they are initialised and start counting from zero(1st index)
+ we access the elekments via the square brackets and the index number of the element we want to access */
+/*  we declare them with two methods {
+   using the default square brackets >> let arrayName=[value1,value2,value3];
+   using the array constructor function,we use the  >> let arrayName=new Array(value1,value2,value3);
+ } 
+ we seperate varius elements in a n array via commas  
+ */
+
+   let content=["apple","banana","orange",24,"grape",true,34937.33,
+
+      personOne={
+         name:"Remmy Opondo",
+         age:34,
+         isStudent:true,
+         hobbies:["coding","reading","traveling"],
+         address:{
+            city:"Nairobi",
+            country:"Kenya",
+            postalCode:3100
+         }
+      }
+   ];
+   console.log(content.length);
+   console.log(content[5]);
+   
+  
