@@ -41,3 +41,44 @@ console.log(sentence.includes("c"));
 console.log(sentence.startsWith("they"));
 console.log(sentence.endsWith("Colors"));
 
+//methods for extracting parts of a sting
+/* we have various methods for extracting parts of a string namely {
+    slice()>>this method extracts a section of a string and returns it as a new string
+     without modifying the original string
+     it has two indexes (one denotes where the string truncation will 
+     begin and the other where it will end )in additon it
+      has a negative index >>it can start counting from the right side 
+
+    substring()>>this method is similar to slice but it does not accept 
+    negative indices and if the start index is greater than the end index
+     it will swap them
+   
+} */
+ let slicedString=sentence.slice(0,19);
+     console.log(slicedString);
+
+     console.log(sentence);
+     
+     //we use this when tryin to filter names and also getting file extensions
+
+     let report="AnnualReport2023.pdf";
+     let newFileExtension=report.slice(-3);
+     console.log(newFileExtension);
+//if we use a substring with a negative index it will not work and it will return an empty string
+        let subString=sentence.substring(-10,5);
+        console.log(subString);
+
+
+//cleaning up the strings >>we use th trim()method to clean up a stirn g empty whitespaces 
+let email="      remmyopond0254@gmail.com      "
+console.log(email);
+let cleanEmail=email.trim();
+console.log(cleanEmail);
+/* USAGES{
+    NO WHITE SPACES
+    COPY PASTE ISSUES ARE SOLVED(PASSWORDS,EMAILS AND OTPS )
+    FORM INPUTS ARE CLEANED UP 
+}
+WE CAN FURTHER HAV trimStart() AND trimEnd() TO REMOVE WHITESPACE FROM THE 
+START OR END OF A STRING RESPECTIVELY
+      */
