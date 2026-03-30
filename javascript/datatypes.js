@@ -153,9 +153,10 @@ let properties=`My name is ${person.name} and i am ${person.age}
             country:"Kenya",
             postalCode:3100
          }
-      }
+      }d
    ];
    console.log(content.length);
    console.log(content[5]);
+   //string methods 
    
   
