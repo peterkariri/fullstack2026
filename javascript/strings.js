@@ -82,3 +82,46 @@ console.log(cleanEmail);
 WE CAN FURTHER HAV trimStart() AND trimEnd() TO REMOVE WHITESPACE FROM THE 
 START OR END OF A STRING RESPECTIVELY
       */
+/* replace()>>it is used to replace a specified string name or instance with another instance 
+ */let username="Remmy opondo";
+
+let newUserName=username.replace("opondo"," ");
+ console.log(newUserName);
+ 
+/*  we use this when we wnt tp maybe sanitize an input or change a specific word in a sentence or
+ maybe to change a specific name in a string */
+
+ let comment="I hate this product"
+
+ let newComment=comment.replace("hate","love");
+
+ console.log(newComment);
+ 
+
+/*  split>>used to split a stirgn into a list/characters in a n array using a delimiter
+ this delimenter can be a spac,comma or a specific word  */
+ let sentenceTwo=`The quick brown fox jumps over the lazy dog with fox embedded colors`;
+ let arrayWords=sentenceTwo.split("," )
+ 
+ console.log(arrayWords);
+ 
+/*  concat>>this is to concatenate>>to add two or three things together  */
+/* we combine two or more strings to come up with a new string without affecting 
+the original strings */
+
+let firstName="Remmy";
+let lastName='Opondo';
+let fullNameTwo=firstName.concat(' ', lastName);
+
+console.log(fullNameTwo);
+
+
+/* repeat>>this is used to repeat an instance of a string  */
+let star="*";
+let repeatedStar=star.repeat(10);
+console.log(repeatedStar);
+
+let bankNumber="1234567890";
+let lasttDigits=bankNumber.slice(-3);
+let secretBankNumber="*".repeat(7)+lasttDigits;
+console.log(secretBankNumber);
