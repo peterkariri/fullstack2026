@@ -125,3 +125,29 @@ let bankNumber="1234567890";
 let lasttDigits=bankNumber.slice(-3);
 let secretBankNumber="*".repeat(7)+lasttDigits;
 console.log(secretBankNumber);
+/* combining string methids with other methods */
+/* array +string */
+
+let products=['Laptop', 'Phone', 'Tablet']
+let search="TABLET";
+
+let result=products.filter(product=>product.toLowerCase().includes(search.toLowerCase()));
+console.log(result);
+
+/* STRINGS WITH OBJECTS */
+let user={
+    firstName:"Aila",
+    lastName:"Mardhia",
+    role:"Developer"
+};
+
+let message=`Welcome ${user.firstName} ${user.lastName}, your role is ${user.role}`;
+console.log(message);
+//used in dashbaords ,emails and notifications to personalize the user experience
+
+naming conventions for strings,functions and variables{
+    camelcase
+    pascal
+    snakecase
+
+}
