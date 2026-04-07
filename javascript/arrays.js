@@ -56,3 +56,14 @@ let shoes=["nike","adidas","puma","reebok"];
 
 let newItems=fruits.concat(shoes);
 console.log(newItems);
+
+//traversing an array 
+/* to traverse an array we have various methods namely {
+//for Each loop >>this is used to traverse an array and perform a specific task on each element 
+
+} */
+
+let numbers=[1,2,3,4,5];
+numbers.forEach(function(number){
+    console.log(number*2)
+})
