@@ -38,11 +38,11 @@
          */
 
          function addNumbers(num1,num2){
-            return num1+num2;
+            console.log(num1+num2);
 
          }
          
-         console.log(addNumbers(1020,3000000));
+         addNumbers(1020,3000000);
 
 
          /* using function expression method>>we start by declaring a 
