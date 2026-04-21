@@ -91,8 +91,6 @@ if(student.score > topStudent.score){
 //lowest student
 if(student.score < lowestStudent.score){
     lowestStudent=student;
-        
-
 }
 }
 console.log(`top student is ${topStudent.name}`);
