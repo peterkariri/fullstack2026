@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="container">
+
+    </div>
+    <script>
+        //getting the container element
+        let container = document.querySelector(".container");
+
+        //creating an array of object of users 
+
+        let users=[
+            {
+                name:"Peter Njuguna",
+                age:30,
+                city:"New York",
+                role:"Software Engineer"
+            },
+            {
+                name:"Remmy Opondo",
+                age:25,
+                city:"London",
+                role:"Data Scientist"
+            },
+            {
+                name:"Mardhia Aila ",
+                age:35,
+                city:"Paris",
+                role:"cyber security analyst"
+            },
+            {
+                name:"Tracy Hellen ",
+                age:30,
+                city:"New York",
+                role:"Program Manager"
+            }
+        ];
+
+        //using innerhtml to display the elements and loops(loop through the array )
+
+     /*    let content='';
+        for(let i=0;i<users.length;i++){
+            //using the content storage with an incremental operator to add the content to the variable
+            content+=`
+             <div class="card">
+               <h1> ${users[i].name}</h1>
+                <p class="age"> ${users[i].age}</p>
+                <p class="city"> ${users[i].city}</p>
+                <p class="role"> ${users[i].role}</p>
+           </div>
+            
+            `
+        } */
+        //for the browser to render the content we add it via inner html to the container element
+       // container.innerHTML=content;
+
+        //or 
+        
+       users.forEach(function(user){
+            container.innerHTML+=`
+             <div class="card">
+               <h1> ${user.name}</h1>
+                <p class="age"> ${user.age}</p>
+                <p class="city"> ${user.city}</p>
+                <p class="role"> ${user.role}</p>
+           </div>
+            
+            `
+        })
+    </script>
+
+    <style>
+
+       .container{
+        display:flex;
+        flex-wrap:wrap;
+        color: whitesmoke;
+       }
+        .card{
+            border:1px solid black;
+            padding:10px;
+            margin:10px;
+            border-radius:10px;
+            padding:10px;
+            background:linear-gradient(to right,blue ,black)
+        }
+        .card h1{
+            font-size:20px;
+            margin-bottom:5px;
+            color:red
+
+        }
+    </style>
+
+   
+</body>
+</html>

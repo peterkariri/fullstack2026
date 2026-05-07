@@ -1,0 +1,139 @@
+
+<!-- /* events means javascript been interactive (
+    responds to users actions on the screen 
+    these actions are referrred to as events and they include {
+        click, mouseover, mouseout, keydown, keyup, load, scroll,keypress, submit, change, focus, blur,
+    }
+)
+how does it work {
+    the browser is always listening for any events and once an event occurs, the browser will execute 
+    the corresponding event handler function that is associated with that event.
+}
+
+
+the basic syntax for an event lister is like this 
+    it takes in the event that the user has intitiated and the callback function that will be executed when the event occurs.
+
+    element.addEventListener('event',function(){}) */
+    
+    click event{
+    this event is triggered when a user clicks on an element. 
+    It can be used to perform actions such as navigating to a new page, submitting a form, or displaying additional information ,hiding information.
+}PRACTICAL USAGES IN A SYSTEM INCLUDE {
+    1. form submission: when a user submits a form, the click event can be
+    BUTTONS,MENU ,CARDS,LINKS OF NAVIGATION }
+
+
+
+    mouseover event {
+    takes actins once a user hovers over the targetted element }
+    -->
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            #count{
+                padding:20px;
+                background-color: rgb(165, 164, 164);
+                border-radius: 10px;
+                width: 20%;
+                color: orange;
+            }
+        </style>
+    </head>
+    <body>
+        <button id="btn">Click me</button>
+
+        <p id="count">  </p>
+         <h1 class="visible">Hello i am visible </h1>
+
+         <button id="toggleBtn">Toggle </button>
+
+
+         <form action="">
+            <button type="submit" id="submit">Submit</button>
+         </form>
+        <script>
+            let display=document.getElementById("count");
+            let btn=document.getElementById("btn");
+            let visible=document.querySelector(".visible");
+            let toggle=document.getElementById("toggleBtn");
+            let submit=document.getElementById("submit");
+/*          
+            let count=0;
+            btn.addEventListener("click",function(){
+               // alert("Button was clicked by AILA");
+
+
+            //CREATING A COUNT ON THE NUMBER OF CLICKS
+               count++;
+            
+              let newDiv=document.createElement("div");
+              newDiv.innerHTML=`
+              <h1>Button was clicked ${count} time</h1>
+              `
+                display.appendChild(newDiv);
+               document.body.style.backgroundColor="red";
+
+              visible.style.display="none";
+               }
+
+
+            )
+            toggle.addEventListener("click",function(){
+                visible.style.display="block";
+
+                display.style.display="none";
+                 document.body.style.backgroundColor="black";
+                                  document.body.style.color="white";
+
+            }) */
+
+            //once hovered with mouse over  and mouseout 
+          /*   where do we use this two {
+                hover effects on buttons, images, links, cards, menu items, 
+                and other interactive elements on a webpage.
+
+                wen we want dropdown menus 
+            } */
+
+            btn.addEventListener("mouseover",function(){
+                document.body.style.backgroundColor="blue";
+                document.body.style.color="white";
+            })
+            btn.addEventListener("mouseout",function(){
+                document.body.style.backgroundColor="white";
+                document.body.style.color="black";
+            })
+
+            //submit event >>is normally used by forms and it is triggered once a button submitt is clicked
+            //  or when the user presses
+            //  the enter key while focused on an input field within a form.
+            //we use this event to validate form data before it is sent to the server,
+            //forms generally have a default behavior of refreshing the page when submitted, 
+            // but we can prevent this default behavior using the preventDefault() method in our event handler function.
+            //preventa form resubmission and page refresh
+            //in the callback function we take an event object parameter which is chained with the preventDefault() 
+            // method to stop the default form submission behavior.
+            //in many appicitonts the event parameter is replaced by leter e 
+          submit.addEventListener("submit",function(e){
+              e.preventDefault()
+               let newDiv=document.createElement("div");
+               newDiv.innerHTML=`
+               <h1>Form was submitted Successfully</h1>
+               `
+               alert("Form was submitted Successfully");
+                display.appendChild(newDiv);
+            })
+            //input and event objects 
+            //event propagation and event delegation
+            //event bubbling and capturing
+            //keyboard events 
+
+        </script>
+    </body>
+    </html>

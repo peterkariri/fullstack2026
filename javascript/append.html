@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="container">
+    <h1>Hello, World!</h1>
+</div>
+
+    <script>
+
+        let container=document.getElementById("container");
+        //created the parent 
+        let parentElement=document.createElement("div");
+        //created the child
+        let newPargraph=document.createElement("p");
+        //added content to the child
+        newPargraph.textContent="This is paragraph created with the dom";
+        //append child to parent
+        parentElement.appendChild(newPargraph);
+
+        //give the created parent a class or an id (className and id or we use setAttribute method)
+
+        parentElement.className="parent";
+        parentElement.id="parent";
+
+      //  up until hee we cannot view the created elements because we have not appended to the docuemnt body 
+        //append the parent to the body
+
+ 
+        container.appendChild(parentElement);
+       
+    </script>
+
+
+
+
+</body>
+</html>
