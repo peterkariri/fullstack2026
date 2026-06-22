@@ -72,3 +72,21 @@ fs.writeFile("/Users/nova/Desktop/fullstack2026/index.txt",message,"utf8",functi
 })
 
 //set up a server using node js 
+
+//install a running server and listen to the server at a port ,3000(localhost)
+
+const http=require('http')
+
+let port=3002;
+
+const server=http.createServer((req,res)=>{
+    res.end("hello Remi and Aila ")
+})
+
+server.listen(`${port}`,()=>{
+    console.log(`server is listening at ${port}`);
+    
+})
+//create paths to nbe renders 
+/* seperate public files form dynmic dashboards 
+ejs (temlating language ) */
