@@ -110,10 +110,25 @@ req.body(fullname,emai )
 req.query>>the overall request json parsed 
 
 the respond(res)>data from backed to user 
-contain this bodies 
+contain this bodies object 
 {
 res.json()
 res.status()>>errors ,messages 
 res.send()>>sends files and dynamic content
 }
-} */
+}
+
+
+//post is used to send data to the server {
+eg >>log in 
+form submission 
+checkout 
+adding items in ecommerce / todo list 
+
+}
+when you find this route implement the code in the post route 
+one you get the res.body from frontend you assing it to the user variable thet now will be stored 
+on the db and you send the user a message that data has been saved successfully 
+
+// 
+// */

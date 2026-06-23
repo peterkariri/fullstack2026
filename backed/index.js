@@ -15,3 +15,18 @@ app.listen(`${port}`,()=>{
 app.get('/',(req,res)=>{
     res.send(`welcome ${person.name}`)
 })
+
+app.post('/login',(res,req)=>{
+    //receives the json format in res.body to be stored in db/validatin/encryption
+
+    let user=req.body
+
+    //send a response to user (json )
+
+res.json( //jsonify
+    {
+        message:"User created",
+        user
+    }
+)
+})
