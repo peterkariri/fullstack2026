@@ -1,77 +1,82 @@
-const express=require('express')
-const app=express();
+const express = require('express');
+const app = express();
 
-const port=3000 //port 
-const path=require('path'). //for [path ]tracing wether static (fs approach)
+const port = 3000;
 
-//middlewares>software that acts as a bridge betwenn apllicaiton 
-//to use middleware in express we invoke the .use clause {app.use(//middleware)}
+// Path module helps locate files and folders
+const path = require('path');
 
-app.use(express.urlencoded({extended:true}))//to encode headers 
+// MIDDLEWARES
+// Middleware acts as a bridge between the request and response
 
-app.use(express.json()) //allowa us to use JSON >>define an array here and convert it to Json 
-let products=[
+// Handles form data
+app.use(express.urlencoded({ extended: true }));
+
+// Handles JSON data
+app.use(express.json());
+
+// Sample product data
+let products = [
     {
-        id:1,
-        name:"Laptop",
-        price:50000,
-        category:"Electronics"
+        id: 1,
+        name: "Laptop",
+        price: 50000,
+        category: "Electronics"
     },
     {
-        id:2,
-        name:"Smartphone",
-        price:15000,
-        category:"Electronics"
+        id: 2,
+        name: "Smartphone",
+        price: 15000,
+        category: "Electronics"
     },
     {
-        id:3,
-        name:"Hair",
-        price:500,
-        category:"Cosmetics"
+        id: 3,
+        name: "Headphones",
+        price: 3000,
+        category: "Accessories"
     },
     {
-        id:4,
-        name:"Keyboard",
-        price:700,
-        category:"Accessories"
+        id: 4,
+        name: "Keyboard",
+        price: 2500,
+        category: "Accessories"
     }
 ];
 
-//define the routes to my views file (static)
-//to be able to use static files we use the path.join(__dirname)
+// HOME PAGE
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'home.html'));
+});
 
-//we use the res.sendFile followed by the
-//  path.join with __dirname and the directory, views, and then the name of the file 
-    //home page 
+// LOGIN PAGE
+app.get('/login', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'login.html'));
+   
+});
 
-    app.get("/",(res,req)=>{
-        res.sendFile(path.join(__dirnmane),'views','home.html')
-    })
+// SIGNUP PAGE
+app.get('/signup', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'signup.html'));
+});
 
-    //login page 
-    app.get("/login",(req,res)=>{
-        res.sendFile(path.join(__dirnmane,'views','login.html'))
-    })
-  
+// CART PAGE
+app.get('/cart', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'cart.html'));
+});
 
-    //signup page
+// PROFILE PAGE
+app.get('/profile', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'profile.html'));
+});
 
-    app.get('/signup',(req,res)=>{
-           res.sendFile(path.join(__dirname,"views","signup.html"))
-    })
-  
-   // cartpage
+// GET ALL PRODUCTS
+app.get('/products', (req, res) => {
+    res.json(products);
+});
 
-     app.get("/cart",(req,res)=>{
-        res.sendFile(path.join(__dirnmane,'views','cart.html'))
-    })
-    //profile
-     app.get("/profile",(req,res)=>{
-        res.sendFile(path.join(__dirnmane,'views','profile.html'))
-    })
-  
-  
-app.listen(`${port}`,()=>{
-console.log(`server is listening at ${port}`);
 
-})
+
+// START SERVER
+app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
+});
