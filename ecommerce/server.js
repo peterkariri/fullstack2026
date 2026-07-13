@@ -27,6 +27,18 @@ let pool=mysql.createPool(
         database:'ECOMMMERCE'
     }
 )
+//where does the form data go 
+//Returns middleware that only parses urlencoded bodies and
+//  only looks at requests where the Content-Type header matches the type option
+//it sends  the req.body of the form 
+
+
+//inside the sql schema we have fullname and what we are getting from login.signup page is req.body.fullname
+//if this contradicts we end up with a server error 
+app.use(express.urlencoded({
+    extended:true,
+}))
+
 /* to test this connection we use the getConnection methods which takes in two parameters {
     an error and a successful connection 
     we do this by chaining the pool to getConnecton method
@@ -88,7 +100,7 @@ let products = [
 }); */
 
 // LOGIN PAGE
-app.get('/login', (req, res) => {
+/* app.get('/login', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'login.html'));
    
 });
@@ -97,7 +109,7 @@ app.get('/login', (req, res) => {
 app.get('/signup', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'signup.html'));
 });
-
+ */
 // CART PAGE
 app.get('/cart', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'cart.html'));
@@ -133,6 +145,31 @@ app.get("/products", (req, res) => {
     });
 
 });
+//post routes >>we are sending the user data(req.body to merger woth server )
+
+app.post('/signup',(req,res)=>{
+    const{
+        fullname,
+        email,
+        number,
+        password,
+        cpassword
+    }=req.body;
+//tosend the req.body to database we define the sql syntax INSERT INTO tablename
+ const sql='INSERT INTO users (fullname,email,number,password,cpassword';
+
+pool.query(sql,[fullname,email,number,password,cpassword],(err)=>{
+    if(err){
+        console.log("error inserting into database")
+    }
+    else{
+        console.log("reg successful")
+        res.send("registration successful")
+    }
+})
+
+})
+
 
 // START SERVER
 app.listen(port, () => {
